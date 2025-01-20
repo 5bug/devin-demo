@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { Spinner } from "./ui/spinner";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Card, CardContent } from "./ui/card";
@@ -106,7 +107,9 @@ export function ChatInterface({ conversation, onUpdate }: ChatInterfaceProps) {
           {conversation.messages.map((msg, index) => (
             <div
               key={index}
-              className={`w-full ${msg.role === "assistant" ? "bg-background-secondary" : ""}`}
+              className={`w-full transition-opacity duration-200 ease-in-out animate-fade-in ${
+                msg.role === "assistant" ? "bg-background-secondary" : ""
+              }`}
             >
               <div className="mx-auto max-w-3xl px-4 py-6">
                 <Card className={`w-3/4 border-0 shadow-none ${
@@ -149,7 +152,7 @@ export function ChatInterface({ conversation, onUpdate }: ChatInterfaceProps) {
                 }
               }}
               placeholder="Send a message..."
-              className="min-h-[40px] max-h-[200px] resize-none overflow-y-auto rounded-lg bg-background-input border-background-input text-primary placeholder-secondary focus-visible:ring-0"
+              className="min-h-[40px] max-h-[200px] resize-none overflow-y-auto rounded-lg bg-background-input border-background-input text-primary placeholder-secondary focus-visible:ring-0 transition-[height,border-color] duration-200 ease-in-out hover:border-background-hover focus:border-background-hover"
               disabled={isStreaming}
               rows={1}
             />
@@ -159,7 +162,11 @@ export function ChatInterface({ conversation, onUpdate }: ChatInterfaceProps) {
               className="mb-1 bg-background-input hover:bg-background-hover text-primary"
               disabled={isStreaming || !message.trim()}
             >
-              <Send className="size-4" />
+              {isStreaming ? (
+                <Spinner size="sm" className="text-primary" />
+              ) : (
+                <Send className="size-4" />
+              )}
             </Button>
           </div>
         </form>
