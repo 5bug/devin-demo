@@ -38,13 +38,13 @@ function App() {
     <div className="relative flex h-screen w-screen overflow-hidden bg-background text-primary">
       {/* Sidebar */}
       <aside className="flex h-full w-64 flex-col border-r border-background-input bg-[#202123]">
-        <div className="p-4">
+        <div className="p-2">
           <Button
-            className="w-full bg-background hover:bg-background-input text-primary"
+            className="w-full bg-transparent hover:bg-background-hover text-primary border border-background-input transition-colors"
             onClick={handleCreateConversation}
           >
             <MessageSquarePlus className="size-4" />
-            New Chat
+            New chat
           </Button>
         </div>
         <ConversationList
