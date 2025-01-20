@@ -47,9 +47,9 @@ export function ConversationList({
         {conversations.map((conversation) => (
           <Card
             key={conversation.id}
-            className={`cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 ${
+            className={`cursor-pointer transition-colors hover:bg-background-hover ${
               activeConversationId === conversation.id
-                ? "border-zinc-400 dark:border-zinc-600"
+                ? "border-background-input"
                 : ""
             }`}
             onClick={() => onSelect(conversation)}

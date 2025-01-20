@@ -5,24 +5,26 @@ export default {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
-  	extend: {
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
-  		colors: {
-  			sidebar: {
-  				DEFAULT: 'hsl(var(--sidebar-background))',
-  				foreground: 'hsl(var(--sidebar-foreground))',
-  				primary: 'hsl(var(--sidebar-primary))',
-  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				accent: 'hsl(var(--sidebar-accent))',
-  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-  				border: 'hsl(var(--sidebar-border))',
-  				ring: 'hsl(var(--sidebar-ring))'
-  			}
-  		},
+    extend: {
+      fontFamily: {
+        sans: ['"Helvetica Neue"', '"Noto Sans"', '"Segoe UI"', 'sans-serif'],
+      },
+      fontSize: {
+        base: ['1rem', '1.5'],
+      },
+      colors: {
+        primary: '#ECECF1',
+        secondary: '#8E8EA0',
+        background: '#343541',
+        'background-secondary': '#444654',
+        'background-input': '#40414F',
+        'background-hover': '#2A2B32',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {

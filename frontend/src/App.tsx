@@ -35,15 +35,15 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen">
+    <div className="relative flex h-screen w-screen overflow-hidden bg-background text-primary">
       {/* Sidebar */}
-      <aside className="flex w-80 flex-col border-r border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
+      <aside className="flex h-full w-64 flex-col border-r border-background-input bg-[#202123]">
         <div className="p-4">
           <Button
-            className="w-full"
+            className="w-full bg-background hover:bg-background-input text-primary"
             onClick={handleCreateConversation}
           >
-            <MessageSquarePlus />
+            <MessageSquarePlus className="size-4" />
             New Chat
           </Button>
         </div>
@@ -56,7 +56,7 @@ function App() {
       </aside>
 
       {/* Main Chat Area */}
-      <main className="flex flex-1 flex-col">
+      <main className="relative flex flex-1 flex-col">
         {activeConversationId ? (
           <ChatInterface
             conversation={conversations.find((c) => c.id === activeConversationId)!}
@@ -67,7 +67,7 @@ function App() {
             }}
           />
         ) : (
-          <div className="flex flex-1 items-center justify-center text-zinc-500">
+          <div className="flex flex-1 items-center justify-center text-secondary">
             Select a conversation or create a new one
           </div>
         )}
