@@ -25,7 +25,7 @@ func sort2(arr []int) {
 func main() {
 	var a []int
 	a = []int{1, 2, 3, 4, 5}
-	sort2(a)
+	sort(a)
 	fmt.Println(a)
 	fmt.Sprintf("Hello Worle%s %d", b)
 }
